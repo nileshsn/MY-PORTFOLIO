@@ -235,16 +235,35 @@ section {
 
 #profile {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center; /* Added to vertically center content */
     gap: 5rem;
     height: 80vh;
 }
 
+@media (max-width: 768px) {
+    #profile {
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; /* Ensure vertical stacking */
+    }
+
+    .section__pic-container {
+        margin: auto;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+        height: 150px; /* Adjust height for mobile */
+        width: 150px; /* Adjust width for mobile */
+    }
+}
+
 #profile .section__pic-container {
-    display: flex;
-    height: 250px;  /* Reduced from original size */
-    width: 250px;   /* Reduced from original size */
+    /* display: flex; */
+    height: 200px;  /* Reduced from original size */
+    width: 200px;   /* Reduced from original size */
     margin: auto 0;
 }
 
@@ -391,8 +410,16 @@ section {
 
 #about {
     position: relative;
+    margin-top: 4rem;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
     /* padding-top:rem; */
     /* padding-bottom: 4rem; */
+}
+
+#about .section__text__p1{
+    margin-top: 4rem;
 }
 
 #about .details-container {
@@ -425,13 +452,19 @@ section {
     display: flex;
     justify-content: center;
     /* flex-wrap: wrap; */
+    /* align-items: center; */
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 6rem;
     width: 100%;
     margin-bottom: 2rem;
 }
 
 .about-details-container {
+    justify-content: center;
+    flex-direction: column;
+}
+
+#about .about-details-container {
     justify-content: center;
     flex-direction: column;
 }
@@ -543,6 +576,7 @@ section {
     min-width: 250px;
     max-width: 320px;
     padding: 1.5rem;
+    margin-bottom: 6rem;
     /* display: flex;
     flex-direction: column; */
 }
@@ -553,6 +587,7 @@ section {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
+    /* margin-top: 2rem; */
 }
 
 #experience .article-container {
@@ -560,6 +595,7 @@ section {
     flex-direction: column; */
     display: flex;
     flex-wrap: wrap;
+    /* margin-top: 5rem; */
     gap: 0.5rem;
     /* flex-grow: 1; */
 }
@@ -567,29 +603,32 @@ section {
 #experience article {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
-    width: 100%;
+    gap: 0.2rem;
+    width: 50%;
 }
 
 #experience .icon {
     width: 1rem;
     height: 1rem;
     min-width: 1rem;
+    margin-right: 0;
 }
 
 #experience article div {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #experience article h3 {
     font-size: 0.9rem;
-    /* color: var(--text-color);
-    margin: 0; */
+    /* color: var(--text-color);*/
+    margin: 0;
 }
 
 #experience article p {
     font-size: 0.8rem;
+    margin: 0;
     /* color: var(--text-color-light);
     margin: 0; */
 }
@@ -665,13 +704,21 @@ article p {
     position: relative;
 }
 
+#projects .section__text{
+    margin-bottom: 2rem;
+    /* margin-top: 5rem; */
+}
+
 .color-container {
     border-color: var(--card-border);
     background: var(--card-background);
+    border-radius: 1rem; /* Reduce card border radius */
+    margin-bottom: 8rem;
+    padding: 1rem; 
 }
 
 .project-img {
-    border-radius: 1rem;
+    border-radius: 0.5rem; /* Reduce image border radius */
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -682,10 +729,32 @@ article p {
     color: var(--text-color);
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Reduce gap between buttons */
+    margin-top: 0.5rem; /* Adjust margin for spacing */
+}
+
 .project-btn {
     color: var(--text-color);
     border-color: var(--card-border);
+    padding: 0.3rem 0.7rem; /* Decrease padding for a more compact button */
+    font-size: 0.8rem; /* Decrease font size slightly */
+    /* width: 5px; Set a smaller max width for the button */
+    /* width: auto; */
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.5rem; /* Reduce button border radius */
+    transition: all 0.3s ease;
 }
+
+.project-btn:hover {
+    background-color: var(--primary-color); /* Change background on hover */
+    color: #fff;
+}
+
 
 /* CONTACT */
 
