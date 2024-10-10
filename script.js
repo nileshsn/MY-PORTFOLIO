@@ -34,15 +34,41 @@ function updateIconColors() {
 toggleSwitch.addEventListener('change', switchTheme, false);
 
 // Check for saved user preference, if any, on load of the website
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+function loadTheme() {
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        } else {
+            toggleSwitch.checked = false;
+        }
+    } else {
+        // If no theme is saved, check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleSwitch.checked = true;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            toggleSwitch.checked = false;
+            localStorage.setItem('theme', 'light');
+        }
     }
+    updateIconColors();
 }
+
+// Load theme on page load
+document.addEventListener('DOMContentLoaded', loadTheme);
+
+// Update theme if system preference changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const newTheme = e.matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    toggleSwitch.checked = e.matches;
+    localStorage.setItem('theme', newTheme);
+    updateIconColors();
+});
 
 // Scroll animations
 function reveal() {
