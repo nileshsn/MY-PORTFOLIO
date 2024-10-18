@@ -423,21 +423,14 @@ section {
 .skills-scrolling,
 .skills-scrolling-reverse {
     display: flex;
-    width: 200%;
-}
-
-.skills-scrolling {
-    animation: scroll 30s linear infinite;
-}
-
-.skills-scrolling-reverse {
-    animation: scroll-reverse 30s linear infinite;
+    width: 200%; /* Double the width to accommodate the duplicated content */
 }
 
 .skills-row {
     display: flex;
     gap: 2rem;
     padding: 1rem 0;
+    flex: 0 0 50%; /* Each row takes up half of the container width */
 }
 
 .skill-box {
@@ -468,10 +461,22 @@ section {
     max-height: 60px;
 }
 
-.skill-box h3 {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin: 0;
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move by half of the container width */
+}
+
+@keyframes scroll-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.skills-scrolling {
+    animation: scroll 30s linear infinite;
+}
+
+.skills-scrolling-reverse {
+    animation: scroll-reverse 30s linear infinite;
 }
 
 /* Projects Section */
