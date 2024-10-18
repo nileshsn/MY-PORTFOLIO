@@ -141,10 +141,10 @@ function consoleText(words, id) {
 
 // Call the function with your text
 consoleText([
-  'Generative AI Enthusiast',
-  'Aspiring MERN Developer',
-  'Harvard ALP\'24',
-  'GSSOC \'24 Contributor',
-  'CS-UG \'26 @ RGUKT-B'
-], 'text');
+    'Generative AI enthusiast.',
+    'Aspiring MERN stack developer.',
+    'Harvard ALP 2024 participant.',
+    'GSSOC 2024 contributor.',
+    'BTech CSE 2026 at RGUKT-Basar.'
+  ], 'text');  
 
