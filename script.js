@@ -7,6 +7,7 @@ function toggleMenu() {
 
 // Dark mode toggle
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const toggleSwitchMobile = document.querySelector('#checkbox-mobile');
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -32,6 +33,7 @@ function updateIconColors() {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+toggleSwitchMobile.addEventListener('change', switchTheme, false);
 
 // Check for saved user preference, if any, on load of the website
 function loadTheme() {
@@ -40,18 +42,22 @@ function loadTheme() {
         document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'dark') {
             toggleSwitch.checked = true;
+            toggleSwitchMobile.checked = true;
         } else {
             toggleSwitch.checked = false;
+            toggleSwitchMobile.checked = false;
         }
     } else {
         // If no theme is saved, check system preference
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggleSwitch.checked = true;
+            toggleSwitchMobile.checked = true;
             localStorage.setItem('theme', 'dark');
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
             toggleSwitch.checked = false;
+            toggleSwitchMobile.checked = false;
             localStorage.setItem('theme', 'light');
         }
     }

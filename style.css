@@ -269,10 +269,29 @@ section {
 #socials-container {
     display: flex;
     justify-content: center;
-    margin-top: 0.5rem;
-    gap: 2rem;
-    position: relative;
-    bottom: -30px;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+#socials-container a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#socials-container .icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#socials-container .icon:hover {
+    transform: scale(1.1);
+}
+
+/* If you're using a dark theme, you might want to invert the icon colors */
+[data-theme="dark"] #socials-container .icon {
+    filter: invert(1);
 }
 
 /* Icon Styles */
@@ -766,4 +785,75 @@ section {
     .btn-container {
         flex-direction: column;
     }
+}
+
+#socials-container a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+#socials-container .icon {
+  display: block;
+}
+
+/* Add these rules to your existing CSS */
+
+#hamburger-nav .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#hamburger-nav .theme-switch-wrapper em {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+#hamburger-nav .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+#hamburger-nav .theme-switch input {
+    display: none;
+}
+
+#hamburger-nav .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+#hamburger-nav .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+#hamburger-nav input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+#hamburger-nav input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+#hamburger-nav .slider.round {
+    border-radius: 34px;
+}
+
+#hamburger-nav .slider.round:before {
+    border-radius: 50%;
 }

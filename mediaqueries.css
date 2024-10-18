@@ -195,3 +195,36 @@
     font-size: 0.9rem;
   }
 }
+
+/* Add these rules at the end of your mediaqueries.css file */
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.skills-scrolling {
+  animation: scroll 20s linear infinite; /* Reduced from 30s to 20s */
+}
+
+.skills-scrolling-reverse {
+  animation: scroll-reverse 20s linear infinite; /* Reduced from 30s to 20s */
+}
+
+/* Adjust speed for different screen sizes */
+@media screen and (max-width: 1024px) {
+  .skills-scrolling, .skills-scrolling-reverse {
+    animation-duration: 15s; /* Further reduced for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-scrolling, .skills-scrolling-reverse {
+    animation-duration: 12s; /* Even faster for mobile devices */
+  }
+}

@@ -42,6 +42,13 @@
             <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
             <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox-mobile">
+                    <input type="checkbox" id="checkbox-mobile" />
+                    <div class="slider round"></div>
+                </label>
+                <em>Switch Theme</em>
+            </li>
         </div>
         </div>
     </nav>
@@ -65,8 +72,12 @@
           </button>
         </div>
         <div id="socials-container">
-          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/enugandhula-nilesh-400a14226/'">
-          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/nileshsn'">
+          <a href="https://www.linkedin.com/in/enugandhula-nilesh-400a14226/" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon">
+          </a>
+          <a href="https://github.com/nileshsn" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/github.png" alt="My Github profile" class="icon">
+          </a>
         </div>
       </div>
     </section>
@@ -279,41 +290,6 @@
                 <h3>NeuralNetwork</h3>
                 <!-- <p>basic</p> -->
               </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/llms.png" alt="TensorFlow" class="skill-logo"></div>
-                <h3>LLMs</h3>
-                <!-- <p>intermediate</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/pytorch.png" alt="PyTorch" class="skill-logo"></div>
-                <h3>PyTorch</h3>
-                <!-- <p>basic</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/nlp.png" alt="Hugging Face" class="skill-logo"></div>
-                <h3>NLP</h3>
-                <!-- <p>basic</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/huggingface.png" alt="Hugging Face" class="skill-logo"></div>
-                <h3>huggingface</h3>
-                <!-- <p>intermediate</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/langchain.png" alt="LangChain" class="skill-logo"></div>
-                <h3>LangChain</h3>
-                <!-- <p>intermediate</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/langgraph.png" alt="LangChain" class="skill-logo"></div>
-                <h3>LangGraph</h3>
-                <!-- <p>basic</p> -->
-              </div>
-              <div class="skill-box">
-                <div class="skill-img-box"><img src="./assets/nn.png" alt="TensorFlow" class="skill-logo"></div>
-                <h3>NeuralNetwork</h3>
-                <!-- <p>basic</p> -->
-              </div>
             </div>
           </div>
         </div>
@@ -409,16 +385,6 @@
       </div>
   </section>
   <footer>
-        <!-- <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav> -->
         <p>Copyright &#169; 2024 ENUGANDHULA NILESH. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
